@@ -199,20 +199,25 @@ body::before {
   width: fit-content;
 }
 
-/* === Responsiveness for Mobile === */
+/* === Mobile Responsive Fix === */
 @media (max-width: 600px) {
-  body {
+  .main-container {
+    width: 90%;
+    max-width: 400px;
+    height: auto; /* biar ngikut isi, nggak fixed */
+  }
+
+  .section-message {
+    margin-top: 15%;
     padding: 10px;
   }
 
-  /* Section message image biar responsive */
   .section-message img {
     max-width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* biar proporsional */
   }
 
-  /* Weather summary image */
   .weather-summary-img {
     width: 80px;
     height: 80px;
@@ -223,13 +228,6 @@ body::before {
     gap: 10px;
   }
 
-  .location-date-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  /* Forecast items container */
   .forecast-items-container {
     gap: 10px;
     padding-bottom: 8px;
