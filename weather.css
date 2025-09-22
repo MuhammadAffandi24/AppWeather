@@ -202,10 +202,10 @@ body::before {
 /* === Mobile Responsive Fix === */
 @media (max-width: 600px) {
   .main-container {
-    width: 85%; /* sama seperti di PC */
-    max-width: 320px; /* biar konsisten */
+    width: 300px; /* sama seperti di PC */
+    max-width: 350px; /* biar konsisten */
     height: auto; /* tetap fleksibel sesuai isi */
-    margin: auto;
+    margin: 0 auto;
   }
 
   .section-message {
