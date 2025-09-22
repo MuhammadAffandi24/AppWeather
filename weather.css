@@ -39,9 +39,8 @@ body::before {
 /* Utilities */
 
 .main-container {
-  width: 90%;
-  max-width: 400px;
-  height: auto; /* biar ikut isi, bukan fixed */
+  width: 300px;
+  height: 500px;
   z-index: 1;
   background: linear-gradient(
     to top,
@@ -52,8 +51,7 @@ body::before {
   backdrop-filter: blur(30px);
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; /* kasih jarak antar section */
 }
 
 /* Input Container */
@@ -129,7 +127,6 @@ body::before {
 }
 
 .weather-summary-img {
-  margin-top: -20px;
   width: 120px;
   height: 120px;
 }
@@ -167,10 +164,15 @@ body::before {
   border-radius: 99px;
 }
 
-/* Forecast item biar fleksibel */
 .forecast-item {
   min-width: 70px;
-  flex: 0 0 auto; /* biar scroll horizontal tetap rapi */
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  border-radius: 12px;
+  transition: 0.3s background;
 }
 
 .forecast-item:hover {
@@ -197,19 +199,27 @@ body::before {
   width: fit-content;
 }
 
-/* Media Query untuk HP */
+/* === Responsiveness for Mobile === */
 @media (max-width: 600px) {
   body {
     padding: 10px;
   }
 
+  /* Section message image biar responsive */
+  .section-message img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Weather summary image */
   .weather-summary-img {
     width: 80px;
     height: 80px;
   }
 
   .weather-summary-container {
-    flex-direction: column; /* biar stack di HP */
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -219,11 +229,19 @@ body::before {
     gap: 5px;
   }
 
+  /* Forecast items container */
   .forecast-items-container {
     gap: 10px;
+    padding-bottom: 8px;
   }
 
-  .section-message img {
-    height: 120px;
+  .forecast-item {
+    min-width: 60px;
+    padding: 6px;
+  }
+
+  .forecast-item img {
+    width: 30px;
+    height: 30px;
   }
 }
