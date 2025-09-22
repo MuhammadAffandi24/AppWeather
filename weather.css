@@ -199,4 +199,48 @@ body::before {
   width: fit-content;
 }
 
+/* === Mobile Responsive Fix === */
+@media (max-width: 600px) {
+  .main-container {
+    width: 85%; /* sama seperti di PC */
+    max-width: 320px; /* biar konsisten */
+    height: auto; /* tetap fleksibel sesuai isi */
+    margin: auto;
+  }
 
+  .section-message {
+    margin-top: 15%;
+    padding: 10px;
+  }
+
+  .section-message img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .weather-summary-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .weather-summary-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .forecast-items-container {
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+
+  .forecast-item {
+    min-width: 60px;
+    padding: 6px;
+  }
+
+  .forecast-item img {
+    width: 30px;
+    height: 30px;
+  }
+}
